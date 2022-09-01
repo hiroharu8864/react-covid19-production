@@ -2,6 +2,7 @@ import { FC, memo, Suspense } from "react";
 import { Typography } from "@material-ui/core";
 
 import { useGetCovidData } from "../../hooks/useGetCovidData";
+import { CovidCards } from "../molecules/CovidCards";
 
 const ResultCountsComponent = () => {
   const { data } = useGetCovidData();
@@ -18,6 +19,11 @@ const ResultCountsComponent = () => {
       >
         {new Date(data?.lastUpdate).toDateString()}
       </Typography>
+      <CovidCards
+        infectedCount={data?.confirmed.value}
+        recoveredCount={data?.recovered.value}
+        deadCount={data?.deaths.value}
+      />
       <p>test</p>
     </>
   );
