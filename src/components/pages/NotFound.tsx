@@ -1,6 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, makeStyles, Typography, Grid, Paper } from "@material-ui/core";
+import { Button, makeStyles, Typography } from "@material-ui/core";
 import { FcSupport } from "react-icons/fc";
 
 const useStyles = makeStyles({
