@@ -24,7 +24,6 @@ const ResultCountsComponent = () => {
         recoveredCount={data?.recovered.value}
         deadCount={data?.deaths.value}
       />
-      <p>test</p>
     </>
   );
 };
@@ -44,8 +43,6 @@ export const Home: FC = memo(() => {
       <Suspense fallback={<p>データ取得中....</p>}>
         <ResultCountsComponent />
       </Suspense>
-      <p>test</p>
-      <p>test</p>
     </>
   );
 });
