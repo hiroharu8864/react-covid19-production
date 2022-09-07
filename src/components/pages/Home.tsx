@@ -7,7 +7,7 @@ import { CovidChart } from "../molecules/CovidChart";
 
 const ResultCountsComponent = () => {
   const { data } = useGetCovidData();
-  console.log(data);
+  // console.log(data);
 
   return (
     <>
