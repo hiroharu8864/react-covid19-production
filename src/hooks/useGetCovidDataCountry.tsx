@@ -2,7 +2,13 @@ import useSWR from "swr";
 
 import { CovidData } from "../components/type/CovidData";
 
-export const useGetCovidDataCountry = () => {
+type Props = {
+  country: string;
+};
+
+export const useGetCovidDataCountry = (Props) => {
+  const { country } = Props;
+
   const covidDataApi = "https://covid19.mathdro.id/api/";
   const covidDataCountryApi = `${covidDataApi}/countries/${country}`;
 
@@ -11,7 +17,7 @@ export const useGetCovidDataCountry = () => {
     return response.json();
   };
 
-  const { data, error } = useSWR<CovidData>(covidDataApi, fetcher, {
+  const { data, error } = useSWR<CovidData>(covidDataCountryApi, fetcher, {
     suspense: true
   });
   return { data, error };
