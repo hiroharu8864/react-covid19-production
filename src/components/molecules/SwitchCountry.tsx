@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { NativeSelect, FormControl } from "@material-ui/core";
 
 export const SwitchCountry: FC = memo(() => {
-  const classes = useStyles();a
+  const classes = useStyles();
 
   const countries = [
     "Japan",
