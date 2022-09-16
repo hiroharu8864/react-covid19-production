@@ -4,6 +4,7 @@ import { Typography } from "@material-ui/core";
 import { useGetCovidData } from "../../hooks/useGetCovidData";
 import { CovidCards } from "../molecules/CovidCards";
 import { CovidChart } from "../molecules/CovidChart";
+import { SwitchCountry } from "../molecules/SwitchCountry";
 
 const ResultCountsComponent = () => {
   const { data } = useGetCovidData();
@@ -20,6 +21,7 @@ const ResultCountsComponent = () => {
       >
         {new Date(data?.lastUpdate).toDateString()}
       </Typography>
+      <SwitchCountry />
       <CovidCards
         infectedCount={data?.confirmed.value}
         recoveredCount={data?.recovered.value}
