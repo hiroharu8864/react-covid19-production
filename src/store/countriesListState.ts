@@ -1,8 +1,8 @@
 import { atom } from "recoil";
 import { Country } from "../components/type/Country";
 
-export const countriesListState = atom<Country[]>({
-  key: "countriesListState",
+export const contriesListState = atom<Country[]>({
+  key: "contriesListState",
   default: [
     { name: "Japan" },
     { name: "Argentina" },

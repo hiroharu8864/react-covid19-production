@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
 
 export const SwitchCountry: FC = memo(() => {
   const classes = useStyles();
-  // const countries = useCountryList();
-  const countries: Country[] = useRecoilState(countriesListState);
+  const countries = useCountryList();
+  // const countries: Country[] = useRecoilState(countriesListState);
   console.log(countries);
 
   return (
@@ -25,9 +25,9 @@ export const SwitchCountry: FC = memo(() => {
       <FormControl className={classes.formControl}>
         <NativeSelect>
           <option value="">select country</option>
-          {countries.map((country: Country, i: number) => (
-            <option key={i} value={country.name}>
-              {country.name}
+          {countries.map((country, i: number) => (
+            <option key={i} value={country}>
+              {country}
             </option>
           ))}
         </NativeSelect>
