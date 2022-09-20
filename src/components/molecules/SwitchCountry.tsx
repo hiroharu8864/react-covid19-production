@@ -1,4 +1,4 @@
-import { FC, React, memo } from "react";
+import { FC, React, memo, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { NativeSelect, FormControl } from "@material-ui/core";
 import { useRecoilState } from "recoil";
@@ -16,8 +16,13 @@ const useStyles = makeStyles((theme) => ({
 
 /**
  * onChangeイベントでカスタムフックを呼び出す
+ * onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+ *           setSelectedCountry(e.target.value)
+ * 等でuseState経由の状態管理だと、子から親への情報伝搬が必要になる。
  */
 export const SwitchCountry: FC = memo(() => {
+  const [selectedCountry, setSelectedCountry] = useState("");
+  console.log(selectedCountry);
   const classes = useStyles();
   const countries = useCountryList();
   // const countries: Country[] = useRecoilState(countriesListState);
@@ -26,7 +31,11 @@ export const SwitchCountry: FC = memo(() => {
   return (
     <>
       <FormControl className={classes.formControl}>
-        <NativeSelect>
+        <NativeSelect
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+            setSelectedCountry(e.target.value)
+          }
+        >
           <option value="">select country</option>
           {countries.map((country, i: number) => (
             <option key={i} value={country}>
