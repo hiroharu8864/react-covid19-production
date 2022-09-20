@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+/**
+ * onChangeイベントでカスタムフックを呼び出す
+ */
 export const SwitchCountry: FC = memo(() => {
   const classes = useStyles();
   const countries = useCountryList();
